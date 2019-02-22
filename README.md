@@ -8,6 +8,13 @@ This LINEBot name is "homebot".
 The meaning of this name is to praise.  
 Japanese is "褒めぼっと".
 
+### How to Use 
+If you have a LINE account...  
+You can use it by reading the QR code in LINE.  
+
+<img src="img/homebot-qr.png" width =30%>
+
+
 ### LINE Screen
 <img src="img/homebot.jpg" width =60%>
  
@@ -21,11 +28,10 @@ Used library：Node.js(On GitHub)
 It is necessary to register GitHub Account, Heroku Account, LINEDevelopers Account.
 
 GitHub：
-https://github.com
-
+https://github.com  
 Heroku：
-https://heroku.com
-
+https://heroku.com  
 LINE Developers：
-https://developers.line.biz/ja/
+https://developers.line.biz  
+
 
