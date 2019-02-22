@@ -14,7 +14,7 @@ function createReplyMessage(input) {
   const homerulang = ["凄いぞ！", "さすが！","よくやった！","いいね！","かっこいいぞ！","大丈夫だよ！","Good!!!","very good!","Nice!","Great!","Excellent!",
 "Wonderful!","Amazing!","Fantastic!","Perfect!","Cool!","Good job!","You’ve got the gift."];
   let text; // 返信メッセージを入れる変数
-  const homeru = ["褒めて！", "褒めてー！","ほめて！", "ほめてー！","褒めて","ほめて"];
+  const homeru = ["褒めて！", "褒めてー！","ほめて！", "ほめてー！","褒めて","ほめて","褒めてー","ほめてー"];
   if (homeru.indexOf(input) === -1) {
     text = "褒めて！（褒めてー！、ほめて！、ほめてー！、褒めて、ほめて）って言ってみてね！君を褒めるよ！";
   } else {
