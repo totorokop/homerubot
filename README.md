@@ -18,7 +18,7 @@ You can use it by reading the QR code in LINE.
 ### LINE Screen
 <img src="img/homebot.jpg" width =60%>
  
- Input "褒めて！".
+ Input "褒めて！".  
  Praise words will be replied.
 
 
