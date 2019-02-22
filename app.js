@@ -11,14 +11,14 @@ const lineClient = new line.Client(lineConfig);
 
 //////////////////↓ここを修正/////////////////////////
 function createReplyMessage(input) {
-  const hands = ["グー", "チョキ", "パー"];
+  const homerulang = ["凄いぞ！", "さすが！","よくやった！","いいね！","かっこいいぞ！","大丈夫だよ！","Good!!!","very good!","Nice!","Great!","Excellent!",
+"Wonderful!","Amazing!","Fantastic!","Perfect!","Cool!","Good job!","You’ve got the gift."];
   let text; // 返信メッセージを入れる変数
-
-  // 配列.indexOf(引数) =>引数が配列の何番目（0始まり）にあるかを返す。引数が配列にない場合、-1を返す。
-  if (hands.indexOf(input) === -1) {    // ユーザーが入力した内容が「グー、チョキ、パー」以外だった場合
-    text = "グー・チョキ・パーのどれかを入力してね";
-  } else { // 手からランダムに一つ選択
-    text = hands[Math.floor(hands.length * Math.random())];
+  const homeru = ["褒めて！", "褒めてー！","ほめて！", "ほめてー！"];
+  if (homeru.indexOf(input) === -1) {
+    text = "褒めて！（褒めてー！、ほめて！、ほめてー！）って言ってみてね！君を褒めるよ！";
+  } else {
+    text = homerulang[Math.floor(homerulang.length * Math.random())];
   }
 
   return {
