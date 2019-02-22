@@ -9,6 +9,7 @@ const lineConfig = {
 };
 const lineClient = new line.Client(lineConfig);
 
+//////////////////↓ここを修正/////////////////////////
 async function createReplyMessage(input) {
   // Yahoo! 郵便番号検索API
   // https://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/zipcodesearch.html#response_field
@@ -41,22 +42,21 @@ async function createReplyMessage(input) {
     text: `住所は「${address}」、最寄り駅は「${stationName}」です。`
   };
 }
+//////////////////↑ここを修正/////////////////////////
 
+//ここより下は変更しない
 const server = express();
-
 server.use("/images", express.static(path.join(__dirname, "images")));
-
 server.post("/webhook", line.middleware(lineConfig), async (req, res) => {
   // LINEのサーバーに200を返す
   res.sendStatus(200);
-
   for (const event of req.body.events) {
     if (event.type === "message" && event.message.type === "text") {
       try {
         const message = await createReplyMessage(event.message.text);
         lineClient.replyMessage(event.replyToken, message);
       } catch (err) {
-        console.log("エラー発生！", err.message, err.stack);
+        console.log("エラー発生中", err.message, err.stack);
         console.log(err.message);
         console.log(err.stack);
       }

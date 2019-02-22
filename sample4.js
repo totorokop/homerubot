@@ -8,6 +8,8 @@ const lineConfig = {
 };
 const lineClient = new line.Client(lineConfig);
 
+
+//////////////////↓ここを修正/////////////////////////
 function createReplyMessage(input) {
   // 3. 画像を返す
 
@@ -22,6 +24,9 @@ function createReplyMessage(input) {
   // https://developers.line.me/ja/reference/messaging-api/#message-objects
 }
 
+//////////////////↑ここを修正/////////////////////////
+
+//ここより下は変更しない
 const server = express();
 
 server.use("/images", express.static(path.join(__dirname, "images")));

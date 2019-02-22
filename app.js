@@ -8,14 +8,29 @@ const lineConfig = {
 };
 const lineClient = new line.Client(lineConfig);
 
+
+//////////////////↓ここを修正/////////////////////////
 function createReplyMessage(input) {
-  // 1. 固定メッセージを返す
+  const hands = ["グー", "チョキ", "パー"];
+  let text; // 返信メッセージを入れる変数
+
+  // 配列.indexOf(引数) =>引数が配列の何番目（0始まり）にあるかを返す。引数が配列にない場合、-1を返す。
+  if (hands.indexOf(input) === -1) {    // ユーザーが入力した内容が「グー、チョキ、パー」以外だった場合
+    text = "グー・チョキ・パーのどれかを入力してね";
+  } else { // 手からランダムに一つ選択
+    text = hands[Math.floor(hands.length * Math.random())];
+  }
+
   return {
     type: "text",
-    text: "Hack Time!"
+    // 「text: text」のようにキー名と変数名が同じ場合、以下のように省略可能
+    // Object Shorthandという文法です
+    text
   };
 }
+//////////////////↑ここを修正/////////////////////////
 
+//ここより下は変更しない
 const server = express();
 
 server.use("/images", express.static(path.join(__dirname, "images")));

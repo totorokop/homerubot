@@ -8,6 +8,7 @@ const lineConfig = {
 };
 const lineClient = new line.Client(lineConfig);
 
+//////////////////↓ここを修正/////////////////////////
 function createReplyMessage(input) {
   // 2. オウム返しする
   return {
@@ -20,14 +21,14 @@ function createReplyMessage(input) {
   };
 }
 
+//////////////////↑ここを修正/////////////////////////
+
+//ここより下は変更しない
 const server = express();
-
 server.use("/images", express.static(path.join(__dirname, "images")));
-
 server.post("/webhook", line.middleware(lineConfig), (req, res) => {
   // LINEのサーバーに200を返す
   res.sendStatus(200);
-
   for (const event of req.body.events) {
     if (event.type === "message" && event.message.type === "text") {
       const message = createReplyMessage(event.message.text);
