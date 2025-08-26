@@ -31,11 +31,7 @@ Used library：Node.js(On GitHub)
 ### preparation
 It is necessary to register GitHub Account, Heroku Account, LINEDevelopers Account.
 
-GitHub：
-https://github.com  
-Heroku：
-https://heroku.com  
-LINE Developers：
-https://developers.line.biz  
+
+
 
 
